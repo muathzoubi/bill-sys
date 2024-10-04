@@ -39,6 +39,8 @@
 
 .card {
   padding: 2em;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .read-the-docs {
@@ -46,9 +48,11 @@
 }
 input {
   padding: 5px 5px;
+  color: #888;
   border-radius: 5px;
   font-family: 'Cairo', sans-serif;
   margin: 2px;
+  max-width: 100% !important;
 }
 select {
   padding: 5px 17px;

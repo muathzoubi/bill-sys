@@ -39,20 +39,20 @@ const customers = [
 ];
 
 export default function InvoiceSystem() {
-  const [selectedCustomer, setselectedCustomer] = useState<any>(null);
+  const [selectedCustomer, setselectedCustomer] = useState<any>();
   const [invoiceItems, setInvoiceItems] = useState([
     { description: '', amount: '' },
   ]);
   const [invoiceTotal, setInvoiceTotal] = useState(0);
 
-  const handleCustomerselect = (customerId: any) => {
+  const handleCustomerselect = (customerId: string) => {
     const customer = customers.find((c) => c.id === parseInt(customerId));
     setselectedCustomer(customer);
     console.log(`تم اختيار الزبون: ${customer!.name}`);
   };
 
   const handleItemChange = (index: any, field: any, value: any) => {
-    const newItems = [...invoiceItems];
+    const newItems = [...invoiceItems] as any;
     newItems[index][field] = value;
     setInvoiceItems(newItems);
     calculateTotal(newItems);
@@ -133,7 +133,7 @@ export default function InvoiceSystem() {
                 </thead>
                 <tbody>
                   {selectedCustomer.transactions.map(
-                    (transaction: string, index: number) => (
+                    (transaction: any, index: any) => (
                       <tr key={index}>
                         <td>{transaction.date}</td>
                         <td>{transaction.description}</td>

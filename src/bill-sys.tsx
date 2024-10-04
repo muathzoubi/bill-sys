@@ -133,7 +133,7 @@ export default function InvoiceSystem() {
                 </thead>
                 <tbody>
                   {selectedCustomer.transactions.map(
-                    (transaction: any, index: any) => (
+                    (transaction: string, index: number) => (
                       <tr key={index}>
                         <td>{transaction.date}</td>
                         <td>{transaction.description}</td>
